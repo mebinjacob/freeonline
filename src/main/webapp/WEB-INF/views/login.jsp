@@ -123,7 +123,10 @@ $(document).ready(function(){
 		    FB.api('/me', function(response) {
 		      console.log('Good to see you, ' + response.name + '.');
 		    });  
-		  $.post("/save", uid);
+		    var user_info = new Object();
+		    user_info.userID = uid;
+		    user_info.authToken = accessToken;
+		  $.post("save", user_info);
 	  }
 		
 
