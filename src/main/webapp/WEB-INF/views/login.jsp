@@ -1,34 +1,3 @@
-<%-- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
-<html>
-<head>
-	<title>Home</title>
-</head>
-<body>
-<h1>
-	LOG IN!  
-</h1>
-
-<P>  Please login using your facebook account </P>
-<div id="fb-root"></div>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="style.css" />
-    <title>jQuery Example</title>
-    <script>
-      $(document).ready(function() {
-    	  $.ajaxSetup({ cache: true });
-    	  $.getScript('//connect.facebook.net/en_UK/all.js', function(){
-    	    FB.init({
-    	      appId: '439037732775113',
-    	    });     
-    	    $('#loginbutton,#feedbutton').removeAttr(
-    	    'disabled');
-    	    FB.getLoginStatus(updateStatusCallback);
-      });
-    </script>
-</body>
-</html>
- --%>
  <html>
 <head></head>
 <body>
@@ -47,7 +16,6 @@ $(document).ready(function(){
 
 	  /*Whether the user is logged in or not!!!!*/
 	  
-	  alert('checking if the user is logged in or not!!!');  
 		  
 		  FB.getLoginStatus(function(response) {
 			  
@@ -118,8 +86,6 @@ $(document).ready(function(){
 		  console.log('Welcome!  Fetching your information.... ');
 		  var uid = response.authResponse.userID;
 		  var accessToken = response.authResponse.accessToken;
-		  alert('The user id is ' + uid);
-		  alert('The access token is ' + accessToken);
 		    FB.api('/me', function(response) {
 		      console.log('Good to see you, ' + response.name + '.');
 		    });  
@@ -141,6 +107,6 @@ $(document).ready(function(){
   Below we include the Login Button social plugin. This button uses the JavaScript SDK to
   present a graphical Login button that triggers the FB.login() function when clicked. -->
 
-<fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
+<fb:login-button show-faces="true" width="200" max-rows="1" perms="email,user_birthday, user_relationships, user_location, user_religion_politics"></fb:login-button>
 </body>
 </html>

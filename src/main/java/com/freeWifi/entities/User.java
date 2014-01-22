@@ -24,6 +24,62 @@ public class User {
 	
 	@Column(name = "USER_ID")
 	private String userID;
+	
+	@Column(name = "email")
+	private String email;
+	
+	@Column(name = "location")
+	private String location;
+	
+	@Column(name = "gender")
+	private String gender;
+	
+	@Column(name = "religion")
+	private String religion;
+	
+	@Column(name = "interestedIn")
+	private String interestedIn;
+	
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getReligion() {
+		return religion;
+	}
+
+	public void setReligion(String religion) {
+		this.religion = religion;
+	}
+
+	public String getInterestedIn() {
+		return interestedIn;
+	}
+
+	public void setInterestedIn(String interestedIn) {
+		this.interestedIn = interestedIn;
+	}
 
 	public String getName() {
 		return name;

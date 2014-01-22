@@ -18,9 +18,16 @@ public class UserServiceImpl implements UserService {
 	public User getUserData(final String userID, final String authToken) {
 		
 		FacebookClient facebookClient = new DefaultFacebookClient(authToken);
-		User fbUser = facebookClient.fetchObject(userID, User.class);
+		com.restfb.types.User fbUser = facebookClient.fetchObject(userID, com.restfb.types.User.class);
 		User user = new User();
 		user.setName(fbUser.getName());
+		user.setUserID(userID);
+		user.setAuthToken(authToken);
+		user.setEmail(fbUser.getEmail());
+		user.setLocation(fbUser.getLocation().getName());
+		user.setGender(fbUser.getGender());
+		user.setReligion(fbUser.getReligion());
+//		user.setInterestedIn(fbUser.getInterestedIn());
 		return user;
 	
 	}

@@ -19,8 +19,8 @@ public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-/*	@Autowired
-	UserService USERSERVICE;*/
+	@Autowired
+	UserService userService;
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -38,12 +38,12 @@ public class HomeController {
 	@RequestMapping(value="/save", method = RequestMethod.POST)
 	public void saveData(HttpServletRequest request){
 		
-	/*	String userID = request.getParameter("userID");
+		String userID = request.getParameter("userID");
 		String authToken = request.getParameter("authToken");
 		userService.getAndSaveUserData(userID, authToken);
 		logger.info("The user id is : " + userID);
 		logger.info("The auth token is " + authToken);
-	*/
+	
 	}
 	
 }
